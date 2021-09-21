@@ -3,9 +3,7 @@
  */
 package com.thing.con;
 
-import com.thing.con.config.SflProperties;
-
-public class Library {
+public class SlfLibrary {
     public boolean someLibraryMethod() {
 
         return true;
