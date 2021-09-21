@@ -1,4 +1,4 @@
-package com.thing.con.service;
+package com.thing.conn.service;
 
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.thing.con.config;
+package com.thing.conn.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;

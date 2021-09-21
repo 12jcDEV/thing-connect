@@ -1,7 +1,7 @@
-package com.thing.con;
+package com.thing.conn;
 
-import com.thing.con.config.ServiceConfig;
-import com.thing.con.service.MessageService;
+import com.thing.conn.config.ServiceConfig;
+import com.thing.conn.service.MessageService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

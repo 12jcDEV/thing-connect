@@ -1,8 +1,8 @@
-package com.thing.con.consumer;
+package com.thing.conn.consumer;
 
 
-import com.thing.con.config.ServiceConfig;
-import com.thing.con.rest.dto.Quote;
+import com.thing.conn.config.ServiceConfig;
+import com.thing.conn.rest.dto.Quote;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

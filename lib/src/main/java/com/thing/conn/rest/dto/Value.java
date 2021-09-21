@@ -1,4 +1,4 @@
-package com.thing.con.rest.dto;
+package com.thing.conn.rest.dto;
 
 public class Value {
 
