@@ -3,8 +3,14 @@
  */
 package com.thing.con;
 
+import com.thing.con.config.SflProperties;
+
 public class Library {
     public boolean someLibraryMethod() {
+
         return true;
+    }
+
+    public void garbageTime() {
     }
 }

@@ -11,12 +11,22 @@ plugins {
     id 'java-library'
 }
 
+configurations {
+    customProvidedRuntime
+}
+
+group = "com.thing.con"
+version = "0.0.1-SNAPSHOT"
+
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
 }
 
 dependencies {
+
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+
     // Use JUnit test framework.
     testImplementation 'junit:junit:4.13'
 
@@ -26,14 +36,36 @@ dependencies {
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation 'com.google.guava:guava:29.0-jre'
 
-    // https://mvnrepository.com/artifact/org.springframework/spring
-    implementation 'org.springframework:spring:5.3.7'
-
-    // https://mvnrepository.com/artifact/com.google.code.gson/gson
     implementation 'com.google.code.gson:gson:2.8.0'
-
-    // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
     implementation 'org.apache.logging.log4j:log4j-core:2.13.2'
+    implementation 'org.apache.commons:commons-configuration2:2.7'
+    implementation 'commons-beanutils:commons-beanutils:1.9.4'
 
+    implementation 'org.springframework:spring-web:5.3.7'
+    implementation 'org.springframework:spring-context:5.3.7'
+    implementation 'org.springframework:spring:5.3.7'
+    implementation 'org.springframework:spring-core:5.3.7'
+    testImplementation 'org.springframework:spring-test:5.3.7'
+
+
+    customProvidedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
+    compileOnly 'org.projectlombok:lombok:1.18.12'
 
 }
+
+
+
+tasks.named('jar') {
+    manifest {
+        attributes('Implementation-Title': project.name,
+                'Implementation-Version': project.version)
+    }
+}
+
+
+
+
+java {
+    withSourcesJar()
+}
+
