@@ -1,42 +1,43 @@
 package com.thing.con.config;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.core.env.Environment;
-import org.springframework.stereotype.Component;
 
+@Configuration
 @PropertySource("classpath:sfl.properties")
-@Component
 public class SflProperties {
 
-    @Autowired
-    Environment environment;
+    @Value( "${sfl.conn.username}" )
+    private String username;
 
-    private String projectTitle;
+    @Value( "${sfl.conn.password}" )
+    private String password;
 
-    public static SflProperties instance;
+    @Value( "${sfl.conn.url}" )
+    private String url;
 
-    private SflProperties() {
-        if(instance == null)
-            instance = new SflProperties();
-
-        projectTitle = this.environment.getProperty("project.title");
-
+    public String getUsername() {
+        return username;
     }
 
-    public static SflProperties getInstance() {
-        return instance;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public static void setInstance(SflProperties instance) {
-        SflProperties.instance = instance;
+    public String getPassword() {
+        return password;
     }
 
-    public String getProjectTitle() {
-        return projectTitle;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public void setProjectTitle(String projectTitle) {
-        this.projectTitle = projectTitle;
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }
